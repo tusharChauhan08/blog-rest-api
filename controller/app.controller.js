@@ -2,7 +2,6 @@ let blogModel = require('../models/app.model');
 
 let dataPost = async(req, res) => {
     try{
-        // let { title, content, author, tag, createdAt} = req.body;
         let data = new blogModel(req.body);
         await data.validate();
         await blogModel.insertMany([data])
